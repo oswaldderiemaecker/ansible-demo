@@ -1,6 +1,0 @@
----
-- hosts: webserver
-  roles:
-  - role: geerlingguy.repo-epel
-  - role: geerlingguy.redis
-    redis_enablerepo: epel
