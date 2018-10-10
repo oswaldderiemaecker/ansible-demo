@@ -20,17 +20,24 @@ Vagrant.configure(2) do |config|
   config.hostmanager.enabled = true
   config.hostmanager.manage_host = true
   config.hostmanager.manage_guest = true
+  config.hostmanager.ignore_private_ip = false
   config.hostmanager.include_offline = true
+
+  config.hostmanager.ip_resolver = proc do |vm, resolving_vm|
+    if hostname = (vm.ssh_info && vm.ssh_info[:host])
+      `VBoxManage guestproperty get #{vm.id} "/VirtualBox/GuestInfo/Net/1/V4/IP"`.split()[1]
+    end
+  end
 
   config.vm.define :ansible_workstation, primary: true do |ansible_workstation|
     ansible_workstation.vm.provider :virtualbox do |v, override|
       v.customize ["modifyvm", :id, "--memory", 1024]
     end
 
-    ansible_workstation.vm.synced_folder ".", "/vagrant", 
+    ansible_workstation.vm.synced_folder ".", "/vagrant",
                  type: "nfs",
 				 :bsd__nfs_options => ['rw','no_subtree_check','all_squash','async']
-    ansible_workstation.vm.network :private_network, ip: '192.168.1.10'
+    ansible_workstation.vm.network :private_network, type: "dhcp"
     ansible_workstation.vm.host_name = "ansible-workstation"
     ansible_workstation.hostmanager.aliases = %w(ansible-workstation.vagrant.local ansible-workstation)
 
@@ -48,7 +55,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", 512]
     end
 
-    webserver_dev.vm.network :private_network, ip: '192.168.1.20'
+    webserver_dev.vm.network :private_network, type: "dhcp"
     webserver_dev.vm.host_name = "webserver.dev"
     webserver_dev.hostmanager.aliases = %w(webserver.dev.vagrant.local webserver.dev)
 
@@ -61,7 +68,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", 512]
     end
 
-    database_dev.vm.network :private_network, ip: '192.168.1.21'
+    database_dev.vm.network :private_network, type: "dhcp"
     database_dev.vm.host_name = "database.dev"
     database_dev.hostmanager.aliases = %w(database.dev.vagrant.local database.dev)
 
@@ -74,7 +81,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", 512]
     end
 
-    webserver_staging.vm.network :private_network, ip: '192.168.1.30'
+    webserver_staging.vm.network :private_network, type: "dhcp"
     webserver_staging.vm.host_name = "webserver.staging"
     webserver_staging.hostmanager.aliases = %w(webserver.staging.vagrant.local webserver.staging)
 
@@ -87,7 +94,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", 512]
     end
 
-    database_staging.vm.network :private_network, ip: '192.168.1.31'
+    database_staging.vm.network :private_network, type: "dhcp"
     database_staging.vm.host_name = "database.staging"
     database_staging.hostmanager.aliases = %w(database.staging.vagrant.local database.staging)
 
@@ -100,7 +107,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", 512]
     end
 
-    webserver_production.vm.network :private_network, ip: '192.168.1.40'
+    webserver_production.vm.network :private_network, type: "dhcp"
     webserver_production.vm.host_name = "webserver.production"
     webserver_production.hostmanager.aliases = %w(webserver.production.vagrant.local webserver.production)
 
@@ -113,7 +120,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", 512]
     end
 
-    database_production.vm.network :private_network, ip: '192.168.1.31'
+    database_production.vm.network :private_network, type: "dhcp"
     database_production.vm.host_name = "database.production"
     database_production.hostmanager.aliases = %w(database.production.vagrant.local database.production)
 
