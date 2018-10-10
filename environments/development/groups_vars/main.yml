@@ -13,3 +13,4 @@ php_packages:
   - php-xml
 
 database_host: "database.dev.vagrant.local"
+redis_host: "database.dev.vagrant.local"
