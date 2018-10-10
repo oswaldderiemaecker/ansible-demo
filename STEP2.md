@@ -2,9 +2,9 @@
 
 Steps:
 
-* Review Staging Environement
+* Review Staging Environment
 * Ensure Disabling Display Errors
-* Deploy our Staging Environement
+* Deploy our Staging Environment
 
 ## Switch to branch step-2
 

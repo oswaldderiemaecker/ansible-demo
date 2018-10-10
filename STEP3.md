@@ -2,8 +2,8 @@
 
 Steps:
 
-* Review Production Environement
-* Deploy our Production Environement
+* Review Production Environment
+* Deploy our Production Environment
 
 ## Switch to branch step-3
 
