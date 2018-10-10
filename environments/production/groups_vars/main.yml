@@ -1,0 +1,15 @@
+php_memory_limit: "256M"
+php_max_execution_time: "90"
+php_upload_max_filesize: "512M"
+php_display_errors: "off"
+php_packages:
+  - php
+  - php-cli
+  - php-common
+  - php-devel
+  - php-gd
+  - php-mbstring
+  - php-pdo
+  - php-xml
+
+database_host: "database.production.vagrant.local"
