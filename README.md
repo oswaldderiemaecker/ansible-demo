@@ -1,4 +1,4 @@
-# Ansible Lamp Stack in Multiple environment 
+# Ansible Lamp Stack in Multiple environments
 
 ## Install Vagrant and it's Plugins
 
