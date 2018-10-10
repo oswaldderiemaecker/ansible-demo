@@ -1,6 +1,11 @@
 * Review Production Environement
-* Review Web Server Playbook
 * Deploy our Production Environement
+
+# Switch to branch step-3
+
+```bash
+git checkout step-3
+```
 
 # Inventory Listing
 
@@ -21,4 +26,5 @@ Accessing the Webserver: http://webserver.production.vagrant.local/
 
 ```bash
 ansible -i environments/production/inventory webserver -a 'systemctl is-active httpd'
+ansible -i environments/production/inventory database -a 'systemctl is-active mariadb'
 ```

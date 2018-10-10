@@ -5,10 +5,16 @@
 * Modify the Display Error attribute for Development
 * ReDeploy our Development Environment
 
+# Switch to branch step-1
+
+```bash
+git checkout step-1
+```
+
 # Install Galaxy Roles
 
 ```bash
-ansible-galaxy install geerlingguy.apache geerlingguy.php geerlingguy.mysql
+ansible-galaxy install geerlingguy.apache geerlingguy.php geerlingguy.mysql -f
 ```
 
 # Inventory Listing
@@ -24,6 +30,13 @@ ansible-playbook --inventory environments/development/inventory webserver.yml
 ansible-playbook --inventory environments/development/inventory database.yml
 ```
 
+# Verify Apache running
+
+```bash
+ansible -i environments/development/inventory webserver -a 'systemctl is-active httpd'
+ansible -i environments/development/inventory database -a 'systemctl is-active mariadb'
+```
+
 Accessing the Webserver: http://webserver.dev.vagrant.local/
 
 # Enabling Display Errors
@@ -35,9 +48,4 @@ php_display_errors: "on"
 
 ```bash
 ansible-playbook --inventory environments/development/inventory webserver.yml
-```
-# Verify Apache running
-
-```bash
-ansible -i environments/development/inventory webserver -a 'systemctl is-active httpd'
 ```
