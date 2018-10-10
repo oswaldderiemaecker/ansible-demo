@@ -3,9 +3,9 @@
 Steps: 
 
 * Install Galaxy Roles for Apache, PHP and MySQL
-* Review Development Environement
+* Review Development Environment
 * Review Web Server & Database Playbook
-* Deploy our Development Environement
+* Deploy our Development Environment
 * Modify the Display Error attribute for Development
 * ReDeploy our Development Environment
 
@@ -16,11 +16,17 @@ git checkout step-1
 ```
 
 ## Install Galaxy Roles
-
+za
 Via [Ansible Galaxy](https://galaxy.ansible.com/home)
 
 ```bash
 ansible-galaxy install geerlingguy.apache geerlingguy.php geerlingguy.mysql -f
+```
+
+or
+
+```bash
+ansible-galaxy -r requirements.yml install
 ```
 
 ## Inventory Listing
