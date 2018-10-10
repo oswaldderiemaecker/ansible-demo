@@ -23,6 +23,12 @@ Via [Ansible Galaxy](https://galaxy.ansible.com/home)
 ansible-galaxy install geerlingguy.apache geerlingguy.php geerlingguy.mysql -f
 ```
 
+or
+
+```bash
+ansible-galaxy -r requirements.yml install
+```
+
 ## Inventory Listing
 
 ```bash
