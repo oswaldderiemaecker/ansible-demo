@@ -1,0 +1,10 @@
+---
+
+- src: geerlingguy.apache
+  version: 3.0.2
+
+- src: geerlingguy.php 
+  version: 3.6.3
+
+- src: geerlingguy.mysql 
+  version: 2.9.4
