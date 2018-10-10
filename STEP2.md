@@ -5,7 +5,7 @@
 # Inventory Listing
 
 ```bash
-ansible --list-hosts --inventory environments/staging/inventory development
+ansible --list-hosts --inventory environments/staging/inventory staging
 ```
 
 # Web Server & Database Deployment
@@ -15,7 +15,7 @@ ansible-playbook --inventory environments/staging/inventory webserver.yml
 ansible-playbook --inventory environments/staging/inventory database.yml
 ```
 
-Accessing the Webserver: http://webserver.dev.vagrant.local/
+Accessing the Webserver: http://webserver.staging.vagrant.local/
 
 # Verify Apache running
 
