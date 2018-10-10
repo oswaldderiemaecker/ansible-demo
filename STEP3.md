@@ -1,19 +1,23 @@
+# Step 3
+
+Steps:
+
 * Review Production Environement
 * Deploy our Production Environement
 
-# Switch to branch step-3
+## Switch to branch step-3
 
 ```bash
 git checkout step-3
 ```
 
-# Inventory Listing
+## Inventory Listing
 
 ```bash
 ansible --list-hosts --inventory environments/production/inventory production
 ```
 
-# Web Server & Database Deployment
+## Web Server & Database Deployment
 
 ```bash
 ansible-playbook --inventory environments/production/inventory webserver.yml
@@ -22,7 +26,7 @@ ansible-playbook --inventory environments/production/inventory database.yml
 
 Accessing the Webserver: http://webserver.production.vagrant.local/
 
-# Verify Apache running
+## Verify Apache running
 
 ```bash
 ansible -i environments/production/inventory webserver -a 'systemctl is-active httpd'
