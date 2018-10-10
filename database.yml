@@ -1,0 +1,14 @@
+---
+- hosts: database
+  roles:
+  - geerlingguy.mysql
+
+  pre_tasks:
+   - include_tasks: tasks/load-vars.yml
+
+  tasks:
+    - name: mariadb is started
+      service:
+        name: mariadb
+        state: started
+        enabled: true
