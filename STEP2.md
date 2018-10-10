@@ -25,8 +25,8 @@ ansible-playbook --inventory environments/staging/inventory database.yml
 # Verify Apache running
 
 ```bash
-ansible -i environments/staging/inventory webserver -a 'systemctl is-active httpd'
+ansible -i environments/development/inventory webserver -a 'systemctl is-active httpd'
+ansible -i environments/development/inventory database -a 'systemctl is-active mariadb'
 ```
 
 Accessing the Webserver: http://webserver.staging.vagrant.local/
-
