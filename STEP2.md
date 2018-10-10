@@ -1,5 +1,5 @@
 * Review Staging Environement
-* Disabling Display Errors
+* Ensure Disabling Display Errors
 * Deploy our Staging Environement
 
 # Inventory Listing
@@ -12,7 +12,7 @@ ansible --list-hosts --inventory environments/staging/inventory staging
 
 ```bash
 vi environments/development/groups_vars/main.yml
-php_display_errors: "on"
+php_display_errors: "off"
 ```
 
 # Web Server & Database Deployment
