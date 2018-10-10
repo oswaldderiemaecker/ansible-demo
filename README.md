@@ -31,4 +31,4 @@ vagrant status
 git checkout step-1
 ```
 
-Follow the [STEP1.md](/ansible-demo/blob/step-1/STEP1.md) and follow steps md files
+Follow the [STEP1.md](STEP1.md) and follow steps md files
