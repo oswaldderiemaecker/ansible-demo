@@ -11,7 +11,7 @@ ansible --list-hosts --inventory environments/staging/inventory staging
 # Disabling Display Errors
 
 ```bash
-vi environments/development/groups_vars/main.yml
+vi environments/staging/groups_vars/main.yml
 php_display_errors: "off"
 ```
 
@@ -25,8 +25,8 @@ ansible-playbook --inventory environments/staging/inventory database.yml
 # Verify Apache running
 
 ```bash
-ansible -i environments/development/inventory webserver -a 'systemctl is-active httpd'
-ansible -i environments/development/inventory database -a 'systemctl is-active mariadb'
+ansible -i environments/staging/inventory webserver -a 'systemctl is-active httpd'
+ansible -i environments/staging/inventory database -a 'systemctl is-active mariadb'
 ```
 
 Accessing the Webserver: http://webserver.staging.vagrant.local/
