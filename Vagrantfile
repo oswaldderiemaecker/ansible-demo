@@ -36,7 +36,7 @@ Vagrant.configure(2) do |config|
 
     $script=<<-EOF
     echo 'Installing Ansible'
-    sudo yum install -y ansible
+    sudo yum install -y ansible git
     sudo chown -R vagrant:vagrant /usr/share/ansible/roles/
     EOF
     ansible_workstation.vm.provision :shell, :inline => $script
