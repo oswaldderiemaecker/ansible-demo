@@ -1,34 +1,38 @@
+# Step 2
+
+Steps:
+
 * Review Staging Environement
 * Ensure Disabling Display Errors
 * Deploy our Staging Environement
 
-# Switch to branch step-2
+## Switch to branch step-2
 
 ```bash
 git checkout step-2
 ```
 
-# Inventory Listing
+## Inventory Listing
 
 ```bash
 ansible --list-hosts --inventory environments/staging/inventory staging
 ```
 
-# Disabling Display Errors
+## Disabling Display Errors
 
 ```bash
 vi environments/staging/groups_vars/main.yml
 php_display_errors: "off"
 ```
 
-# Web Server & Database Deployment
+## Web Server & Database Deployment
 
 ```bash
 ansible-playbook --inventory environments/staging/inventory webserver.yml
 ansible-playbook --inventory environments/staging/inventory database.yml
 ```
 
-# Verify Apache running
+## Verify Apache running
 
 ```bash
 ansible -i environments/staging/inventory webserver -a 'systemctl is-active httpd'
