@@ -35,8 +35,7 @@ Vagrant.configure(2) do |config|
     end
 
     ansible_workstation.vm.synced_folder ".", "/vagrant",
-                 type: "nfs",
-				 :bsd__nfs_options => ['rw','no_subtree_check','all_squash','async']
+            type: "nfs", :bsd__nfs_options => ['rw','no_subtree_check','all_squash','async']
     ansible_workstation.vm.network :private_network, type: "dhcp"
     ansible_workstation.vm.host_name = "ansible-workstation"
     ansible_workstation.hostmanager.aliases = %w(ansible-workstation.vagrant.local ansible-workstation)
