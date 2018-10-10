@@ -5,7 +5,7 @@
 # Inventory Listing
 
 ```bash
-ansible --list-hosts --inventory environments/production/inventory staging
+ansible --list-hosts --inventory environments/production/inventory production
 ```
 
 # Web Server & Database Deployment
