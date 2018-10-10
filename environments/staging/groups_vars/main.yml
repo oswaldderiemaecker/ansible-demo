@@ -12,6 +12,4 @@ php_packages:
   - php-pdo
   - php-xml
 
-ma_valeur_de_test: "Premier Deploiement"
 database_host: "database.staging.vagrant.local"
-redis_host: "database.staging.vagrant.local"
