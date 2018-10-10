@@ -3,6 +3,12 @@
 * Review Redis Playbook & Vars
 * Deploy our Redis Playbook in the Developmment Environement
 
+# Switch to branch step-4
+
+```bash
+git checkout step-4
+```
+
 # Getting Redis Role from Galaxy
 
 ```bash

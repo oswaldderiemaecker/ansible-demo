@@ -5,6 +5,12 @@
 * Modify the Display Error attribute for Development
 * ReDeploy our Development Environment
 
+# Switch to branch step-1
+
+```bash
+git checkout step-1
+```
+
 # Install Galaxy Roles
 
 ```bash

@@ -1,6 +1,12 @@
 * Review Production Environement
 * Deploy our Production Environement
 
+# Switch to branch step-3
+
+```bash
+git checkout step-3
+```
+
 # Inventory Listing
 
 ```bash

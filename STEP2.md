@@ -2,6 +2,12 @@
 * Ensure Disabling Display Errors
 * Deploy our Staging Environement
 
+# Switch to branch step-2
+-
+```bash
+git checkout step-2
+```
+
 # Inventory Listing
 
 ```bash
