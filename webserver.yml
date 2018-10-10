@@ -1,0 +1,30 @@
+---
+- hosts: webserver
+  roles:
+  - geerlingguy.apache
+  - geerlingguy.php
+
+  pre_tasks:
+   - include_tasks: tasks/load-vars.yml
+
+  tasks:
+    - name: index file
+      copy:
+        src: files/index.php
+        dest: /var/www/html/index.php
+
+    - file:
+        path: /etc/app
+        state: directory
+        mode: 0755
+
+    - name: application config
+      template:
+        src: files/config.j2
+        dest: /etc/app/config
+
+    - name: httpd is started
+      service:
+        name: httpd
+        state: started
+        enabled: true
