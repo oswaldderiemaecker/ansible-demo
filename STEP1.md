@@ -8,7 +8,7 @@
 # Install Galaxy Roles
 
 ```bash
-ansible-galaxy install geerlingguy.apache geerlingguy.php geerlingguy.mysql
+ansible-galaxy install geerlingguy.apache geerlingguy.php geerlingguy.mysql -f
 ```
 
 # Inventory Listing
