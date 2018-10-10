@@ -1,0 +1,9 @@
+[webserver]
+webserver.dev.vagrant.local
+
+[database]
+database.dev.vagrant.local
+
+[development:children]
+webserver
+database
