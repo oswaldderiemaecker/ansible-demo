@@ -4,7 +4,7 @@
 
 * Installer Galaxy Roles pour Apache, PHP et MySQL
 * Examiner l'environnement de développement
-* Examiner le playbook Web et de la base de données
+* Examiner le playbook du serveur Web et de la base de données
 * Déployer notre environnement de développement
 * Modifier l'attribut php_display_errors pour le développement
 * Redéployer notre environnement de développement
