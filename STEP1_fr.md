@@ -16,14 +16,14 @@ git checkout step-1
 ```
 
 ## Installer les rôles de Galaxy
-za
+
 Via [Ansible Galaxy](https://galaxy.ansible.com/home)
 
 ```bash
 ansible-galaxy install geerlingguy.apache geerlingguy.php geerlingguy.mysql -f
 ```
 
-or
+ou
 
 ```bash
 ansible-galaxy -r requirements.yml install
