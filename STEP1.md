@@ -16,7 +16,7 @@ git checkout step-1
 ```
 
 ## Install Galaxy Roles
-za
+
 Via [Ansible Galaxy](https://galaxy.ansible.com/home)
 
 ```bash
