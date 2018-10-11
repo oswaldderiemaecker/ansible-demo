@@ -32,3 +32,5 @@ Accessing the Webserver: http://webserver.production.vagrant.local/
 ansible -i environments/production/inventory webserver -a 'systemctl is-active httpd'
 ansible -i environments/production/inventory database -a 'systemctl is-active mariadb'
 ```
+
+Follow the [STEP4.md](STEP4.md)

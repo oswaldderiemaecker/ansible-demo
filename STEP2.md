@@ -9,6 +9,7 @@ Steps:
 ## Switch to branch step-2
 
 ```bash
+git checkout environments/development/groups_vars/main.yml
 git checkout step-2
 ```
 
@@ -40,3 +41,5 @@ ansible -i environments/staging/inventory database -a 'systemctl is-active maria
 ```
 
 Accessing the Webserver: http://webserver.staging.vagrant.local/
+
+Follow the [STEP3.md](STEP3.md)
