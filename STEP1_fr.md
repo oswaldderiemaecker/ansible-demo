@@ -2,7 +2,7 @@
 
 Étapes:
 
-* Installer Galaxy Roles pour Apache, PHP et MySQL
+* Installer Apache, PHP et MySQL Roles via Galaxy 
 * Examiner l'environnement de développement
 * Examiner le playbook Web et de la base de données
 * Déployer notre environnement de développement
