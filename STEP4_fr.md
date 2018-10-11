@@ -1,25 +1,25 @@
-# Step 4
+# Étape 4
 
-Steps:
+Étapes:
 
-* Adding Redis in Development Environment
-* Install Redis Role from Ansible Galaxy
-* Review Redis Playbook & Vars
-* Deploy our Redis Playbook in the Developmment Environment
+* Ajouter Redis dans l'environnement de développement
+* Installer Redis à partir d'Ansible Galaxy
+* Examiner le playbook Redis et ses variables
+* Déployer notre playbook Redis dans l'environnement de développement
 
-## Switch to branch step-4
+## Passer à la branche step-4
 
 ```bash
 git checkout step-4
 ```
 
-## Getting Redis Role from Galaxy
+## Installer le rôle Redis de Galaxy
 
 ```bash
 ansible-galaxy install geerlingguy.redis geerlingguy.repo-epel
 ```
 
-## Review Redis Playbook & Vars
+## Examiner le playbook Redis et ses variables
 
 Playbook:
 
@@ -34,23 +34,24 @@ cat environments/development/groups_vars/main.yml
 cat files/config.j2
 ```
 
-## Inventory Listing
+## Liste d'inventaire
 
 ```bash
 ansible --list-hosts --inventory environments/development/inventory development
 ```
 
-## Web Server & Redis Deployment
+## Déploiement de redis et du serveur Web
 
 ```bash
 ansible-playbook --inventory environments/development/inventory redis.yml
 ansible-playbook --inventory environments/development/inventory webserver.yml
 ```
 
-## Verify Redis running
+## Vérifier que Redis est en cours d'exécution
+
 
 ```bash
 ansible -i environments/development/inventory database -a 'systemctl is-active redis'
 ```
 
-Accessing the Webserver: http://webserver.dev.vagrant.local/
+Accéder au serveur Web: http://webserver.dev.vagrant.local/
