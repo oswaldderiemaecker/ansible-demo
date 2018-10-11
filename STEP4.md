@@ -2,10 +2,10 @@
 
 Steps:
 
-* Adding Redis in Development Environement
+* Adding Redis in Development Environment
 * Install Redis Role from Ansible Galaxy
 * Review Redis Playbook & Vars
-* Deploy our Redis Playbook in the Developmment Environement
+* Deploy our Redis Playbook in the Developmment Environment
 
 ## Switch to branch step-4
 
@@ -54,3 +54,4 @@ Accessing the Webserver: http://webserver.dev.vagrant.local/
 ```bash
 ansible -i environments/development/inventory database -a 'systemctl is-active redis'
 ```
+
