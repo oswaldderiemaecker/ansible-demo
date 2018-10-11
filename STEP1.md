@@ -61,3 +61,5 @@ php_display_errors: "on"
 ```bash
 ansible-playbook --inventory environments/development/inventory webserver.yml
 ```
+
+Follow the [STEP2.md](STEP2.md)
