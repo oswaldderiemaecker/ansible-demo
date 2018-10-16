@@ -46,7 +46,7 @@ ansible --list-hosts --inventory environments/development/inventory development
 ### Notre environment de développement
 
 ```bash
-cat environments/development/group_vars/main.yml
+cat environments/development/groups_vars/main.yml
 cat files/index.php
 cat files/config.j2
 cat tasks/load-vars.yml
