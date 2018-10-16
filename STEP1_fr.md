@@ -26,6 +26,7 @@ ansible-galaxy install geerlingguy.apache geerlingguy.php geerlingguy.mysql -f
 ou
 
 ```bash
+cat requirements.yml
 ansible-galaxy -r requirements.yml install
 ```
 
