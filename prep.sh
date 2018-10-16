@@ -1,5 +1,8 @@
 #!/bin/bash
 
+git checkout step-1
+ansible-playbook --inventory environments/development/inventory webserver.yml
+ansible-playbook --inventory environments/development/inventory database.yml
 git checkout step-2
 ansible-galaxy -r requirements.yml install
 ansible-playbook --inventory environments/staging/inventory webserver.yml
