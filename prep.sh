@@ -8,4 +8,6 @@ git checkout step-3
 ansible-galaxy -r requirements.yml install
 ansible-playbook --inventory environments/production/inventory webserver.yml
 ansible-playbook --inventory environments/production/inventory database.yml
+git checkout step-4
+ansible-galaxy -r requirements.yml install
 git checkout step-1
