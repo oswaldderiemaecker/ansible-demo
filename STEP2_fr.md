@@ -16,13 +16,13 @@ git checkout step-2
 ## Liste d'inventaire
 
 ```bash
+cat environments/staging/inventory
 ansible --list-hosts --inventory environments/staging/inventory staging
 ```
-
 ##  Désactivation l'affichage des erreurs
 
 ```bash
-vi environments/staging/groups_vars/main.yml
+cat environments/staging/groups_vars/main.yml
 php_display_errors: "off"
 ```
 
