@@ -19,6 +19,13 @@ git checkout step-4
 ansible-galaxy install geerlingguy.redis geerlingguy.repo-epel
 ```
 
+ou
+
+```bash
+cat requirements.yml
+ansible-galaxy -r requirements.yml install
+```
+
 ## Examiner le playbook Redis et ses variables
 
 Playbook:

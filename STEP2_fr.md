@@ -16,14 +16,15 @@ git checkout step-2
 ## Liste d'inventaire
 
 ```bash
+cat environments/staging/inventory
 ansible --list-hosts --inventory environments/staging/inventory staging
 ```
-
-##  Désactivation l'affichage des erreurs
+##  Désactivation l'affichage des erreurs et configuration base de donnée pour notre application
 
 ```bash
-vi environments/staging/groups_vars/main.yml
+cat environments/staging/groups_vars/main.yml
 php_display_errors: "off"
+database_host: "database.staging.vagrant.local"
 ```
 
 ## Déploiement du serveur Web et de base de données
