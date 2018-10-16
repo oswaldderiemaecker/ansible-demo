@@ -14,7 +14,16 @@ git checkout step-3
 ## Liste d'inventaire
 
 ```bash
+cat environments/production/inventory
 ansible --list-hosts --inventory environments/production/inventory production
+```
+
+##  Désactivation l'affichage des erreurs et configuration base de donnée pour notre application
+
+```bash
+cat environments/production/groups_vars/main.yml
+php_display_errors: "off"
+database_host: "database.production.vagrant.local"
 ```
 
 ## Déploiement de serveurs Web et de bases de données
