@@ -30,10 +30,27 @@ cat requirements.yml
 ansible-galaxy -r requirements.yml install
 ```
 
-## Liste d'inventaire
+## Notre Fichier config Ansible
 
 ```bash
+cat ansible.cfg
+```
+
+## Liste d'inventaire
+
+```bashcat environments/development/inventory
 ansible --list-hosts --inventory environments/development/inventory development
+```
+
+### Notre environment de développement
+
+```bash
+cat environments/development/group_vars/main.yml
+cat files/index.php
+cat files/config.j2
+cat tasks/load-vars.yml
+cat webserver.yml
+cat database.yml
 ```
 
 ## Déploiement du serveur Web et de base de données
@@ -52,7 +69,7 @@ ansible -i environments/development/inventory database -a 'systemctl is-active m
 
 Accessing the Webserver: http://webserver.dev.vagrant.local/
 
-## Activer l'affichage des erreurs en développement
+# Activer l'affichage des erreurs en développement
 
 ```bash
 vi environments/development/groups_vars/main.yml
