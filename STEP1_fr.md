@@ -38,7 +38,8 @@ cat ansible.cfg
 
 ## Liste d'inventaire
 
-```bashcat environments/development/inventory
+```bash
+cat environments/development/inventory
 ansible --list-hosts --inventory environments/development/inventory development
 ```
 
