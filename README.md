@@ -37,6 +37,11 @@ vagrant snapshot save webserver_production
 vagrant snapshot save database_production
 ```
 
+```bash
+vagrant snapshot list
+vagrant snapshot restore ansible_workstation ansible_workstation
+```
+
 ## Checkout the Demo Steps
 
 ```bash
