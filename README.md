@@ -25,6 +25,11 @@ vagrant up
 vagrant status
 ```
 
+## Snapshot the Machines
+
+```bash
+```
+
 ## Checkout the Demo Steps
 
 ```bash
