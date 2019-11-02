@@ -28,6 +28,13 @@ vagrant status
 ## Snapshot the Machines
 
 ```bash
+vagrant snapshot save ansible_workstation
+vagrant snapshot save webserver_dev
+vagrant snapshot save database_dev
+vagrant snapshot save webserver_staging
+vagrant snapshot save database_staging
+vagrant snapshot save webserver_production
+vagrant snapshot save database_production
 ```
 
 ## Checkout the Demo Steps
