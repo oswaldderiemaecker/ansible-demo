@@ -38,7 +38,7 @@ Creating ansible-demo_database-prod_1     ... done
 ```
 
 ## Check that all Hosts Container Machine are up and running
-# **Wait a few seconds until all databases container finished their entrypoint and runs the ssh agent !**
+**Wait a few seconds until all databases container finished their entrypoint and runs the ssh agent !**
 
 ```
 docker-compose ps
@@ -75,7 +75,7 @@ webserver.staging.local | SUCCESS => {
 }
 ```
 
-## *If you see these kind of logs in your databases container you're good to continue* :
+**If you see these kind of logs in your databases container you're good to continue :**
 ```
 docker-compose logs -f database.staging.local
                             ...
