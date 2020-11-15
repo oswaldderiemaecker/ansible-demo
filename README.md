@@ -21,7 +21,7 @@ cd ansible-demo
 mv id_rsa_ansible.pub containers/webserver
 mv id_rsa_ansible ../docker-ansible-env
 ```
-** Be sure that in your ssh.config your IdentityFile is set to "../docker-ansible-env/id_rsa_ansible" **
+**Be sure that in your ssh.config your IdentityFile is set to "../docker-ansible-env/id_rsa_ansible"**
 
 ## Up you host containers hosts
 
