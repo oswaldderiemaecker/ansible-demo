@@ -1,8 +1,8 @@
 [webserver]
-webserver.dev.vagrant.local
+webserver.dev.docker.local
 
 [database]
-database.dev.vagrant.local
+database.dev.docker.local
 
 [development:children]
 webserver
