@@ -14,19 +14,19 @@ https://docs.docker.com/get-docker/
 ## Generating Private & Public Key
 
 ```bash
-$ ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa_ansible -q -N ""
-$ cd ../
-$ mkdir docker-ansible-env (for example)
-$ cd /ansible-demo
-$ mv id_rsa_ansible.pub containers/webserver
-$ mv id_rsa_ansible.pub ../docker-ansible-env
+ssh-keygen -b 2048 -t rsa -f id_rsa_ansible -q -N ""
+cd ../
+mkdir docker-ansible-env (for example)
+cd ansible-demo
+mv id_rsa_ansible.pub containers/webserver
+mv id_rsa_ansible ../docker-ansible-env
 ```
 ** Be sure that in your ssh.config your IdentityFile is set to "../docker-ansible-env/id_rsa_ansible" **
 
 ## Up you host containers hosts
 
 ```bash
-$ docker-compose up -d
+docker-compose up -d
 
 Creating network "ansible-demo_default" with the default driver
 Creating ansible-demo_webserver-dev_1     ... done
@@ -41,7 +41,7 @@ Creating ansible-demo_database-prod_1     ... done
 # **Wait a few seconds until all databases container finished their entrypoint and runs the ssh agent !**
 
 ```
-$ docker-compose ps
+docker-compose ps
               Name                         Command           State               Ports             
 ---------------------------------------------------------------------------------------------------
 ansible-demo_database-dev_1        /tmp/data/entrypoint.sh   Up      0.0.0.0:2225->22/tcp, 5432/tcp
@@ -54,7 +54,7 @@ ansible-demo_webserver-staging_1   /usr/sbin/sshd -D         Up      0.0.0.0:222
 
 ## Check that Ansible can reach its hosts
 ```
-$ ansible database.dev.local -m ping
+ansible database.dev.local -m ping
 
 database.dev.local | SUCCESS => {
     "ansible_facts": {
@@ -64,7 +64,7 @@ database.dev.local | SUCCESS => {
     "ping": "pong"
 }
 
-$ ansible webserver.staging.local -m ping
+ansible webserver.staging.local -m ping
 
 webserver.staging.local | SUCCESS => {
     "ansible_facts": {
@@ -75,9 +75,9 @@ webserver.staging.local | SUCCESS => {
 }
 ```
 
-## *If you see thee kind of logs in your databases container you're good to continue* :
+## *If you see these kind of logs in your databases container you're good to continue* :
 ```
-$ docker-compose logs -f database.staging.local
+docker-compose logs -f database.staging.local
                             ...
 database-dev_1       | Setting up python2 (2.7.16-1) ...
 database-dev_1       | Setting up libpython-stdlib:amd64 (2.7.16-1) ...
