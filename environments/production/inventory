@@ -1,8 +1,8 @@
 [webserver]
-webserver.production.docker.local
+webserver.production.local
 
 [database]
-database.production.docker.local
+database.production.local
 
 [production:children]
 webserver

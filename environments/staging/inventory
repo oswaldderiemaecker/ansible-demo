@@ -1,8 +1,8 @@
 [webserver]
-webserver.staging.docker.local
+webserver.staging.local
 
 [database]
-database.staging.docker.local
+database.staging.local
 
 [staging:children]
 webserver

@@ -1,8 +1,8 @@
 [webserver]
-webserver.dev.docker.local
+webserver.dev.local
 
 [database]
-database.dev.docker.local
+database.dev.local
 
 [development:children]
 webserver

@@ -6,7 +6,7 @@ services:
     build:
       context: ./containers/webserver
     image: ubuntu-ssh
-    hostname: webserver.dev.docker.local
+    hostname: webserver.dev.local
     ports:
       - "2224:22"
 
@@ -15,7 +15,7 @@ services:
     volumes:
         - .:/tmp/data/
     entrypoint: ["/tmp/data/entrypoint.sh"]
-    hostname: database.dev.docker.local
+    hostname: database.dev.local
     ports:
       - "2225:22"
 
@@ -24,7 +24,7 @@ services:
     build:
       context: ./containers/webserver
     image: ubuntu-ssh
-    hostname: webserver.staging.docker.local
+    hostname: webserver.staging.local
     ports:
       - "2226:22"
 
@@ -33,7 +33,7 @@ services:
     volumes:
         - .:/tmp/data/
     entrypoint: ["/tmp/data/entrypoint.sh"]
-    hostname: database.staging.docker.local
+    hostname: database.staging.local
     ports:
       - "2227:22"
 
@@ -42,7 +42,7 @@ services:
     build:
       context: ./containers/webserver
     image: ubuntu-ssh
-    hostname: webserver.production.docker.local
+    hostname: webserver.production.local
     ports:
       - "2228:22"
 
@@ -51,6 +51,6 @@ services:
     volumes:
         - .:/tmp/data/
     entrypoint: ["/tmp/data/entrypoint.sh"]
-    hostname: database.production.docker.local
+    hostname: database.production.local
     ports:
       - "2229:22"

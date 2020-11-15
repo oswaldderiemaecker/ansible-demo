@@ -54,9 +54,9 @@ ansible-demo_webserver-staging_1   /usr/sbin/sshd -D         Up      0.0.0.0:222
 
 ## Check that Ansible can reach its hosts
 ```
-$ ansible database.dev.docker.local -m ping
+$ ansible database.dev.local -m ping
 
-database.dev.docker.local | SUCCESS => {
+database.dev.local | SUCCESS => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python"
     }, 
@@ -64,9 +64,9 @@ database.dev.docker.local | SUCCESS => {
     "ping": "pong"
 }
 
-$ ansible webserver.staging.docker.local -m ping
+$ ansible webserver.staging.local -m ping
 
-webserver.dev.docker.local | SUCCESS => {
+webserver.staging.local | SUCCESS => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python3"
     }, 
@@ -77,7 +77,7 @@ webserver.dev.docker.local | SUCCESS => {
 
 ## *If you see thee kind of logs in your databases container you're good to continue* :
 ```
-$ docker-compose logs -f database.staging.docker.local
+$ docker-compose logs -f database.staging.local
                             ...
 database-dev_1       | Setting up python2 (2.7.16-1) ...
 database-dev_1       | Setting up libpython-stdlib:amd64 (2.7.16-1) ...
