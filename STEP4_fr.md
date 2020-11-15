@@ -23,7 +23,7 @@ ou
 
 ```bash
 cat requirements.yml
-ansible-galaxy -r requirements.yml install
+ansible-galaxy install -r requirements.yml
 ```
 
 ## Examiner le playbook Redis et ses variables

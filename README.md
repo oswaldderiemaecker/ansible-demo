@@ -1,5 +1,6 @@
 # Ansible Lamp Stack in Multiple environments
 
+# Docker Host
 You have 2 ways to generate your inventories with
 
     - Docker
@@ -54,7 +55,7 @@ ansible-demo_webserver-staging_1   /usr/sbin/sshd -D         Up      0.0.0.0:222
 
 ## Check that Ansible can reach its hosts
 ```
-ansible database.dev.local -m ping
+ansible database.dev.local -m pinga
 
 database.dev.local | SUCCESS => {
     "ansible_facts": {
@@ -93,6 +94,8 @@ database-dev_1       | 0 added, 0 removed; done.
 database-dev_1       | Running hooks in /etc/ca-certificates/update.d...
 database-dev_1       | done.
 ```
+
+# Vagrant Host
 
 ## Install Vagrant and it's Plugins
 
