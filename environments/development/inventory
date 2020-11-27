@@ -1,8 +1,8 @@
 [webserver]
-webserver.dev.vagrant.local
+webserver.dev.local
 
 [database]
-database.dev.vagrant.local
+database.dev.local
 
 [development:children]
 webserver

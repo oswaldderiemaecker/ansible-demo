@@ -1,0 +1,56 @@
+version: '2'
+services:
+
+  ## Webserver/Database Hosts Development
+  webserver-dev:
+    build:
+      context: ./containers/webserver
+    image: ubuntu-ssh
+    hostname: webserver.dev.local
+    ports:
+      - "2224:22"
+
+  database-dev:
+    image: postgres
+    volumes:
+        - .:/tmp/data/
+    entrypoint: ["/tmp/data/entrypoint.sh"]
+    hostname: database.dev.local
+    ports:
+      - "2225:22"
+
+  ## Webserver/Database Hosts Staging
+  webserver-staging:
+    build:
+      context: ./containers/webserver
+    image: ubuntu-ssh
+    hostname: webserver.staging.local
+    ports:
+      - "2226:22"
+
+  database-staging:
+    image: postgres
+    volumes:
+        - .:/tmp/data/
+    entrypoint: ["/tmp/data/entrypoint.sh"]
+    hostname: database.staging.local
+    ports:
+      - "2227:22"
+
+  ## Webserver/Database Hosts Prod
+  webserver-prod:
+    build:
+      context: ./containers/webserver
+    image: ubuntu-ssh
+    hostname: webserver.production.local
+    ports:
+      - "2228:22"
+
+  database-prod:
+    image: postgres
+    volumes:
+        - .:/tmp/data/
+    entrypoint: ["/tmp/data/entrypoint.sh"]
+    hostname: database.production.local
+    ports:
+      - "2229:22"

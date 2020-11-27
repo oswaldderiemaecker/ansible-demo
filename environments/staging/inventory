@@ -1,8 +1,8 @@
 [webserver]
-webserver.staging.vagrant.local
+webserver.staging.local
 
 [database]
-database.staging.vagrant.local
+database.staging.local
 
 [staging:children]
 webserver
